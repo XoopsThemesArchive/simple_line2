@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="keywords" content="<{$xoops_meta_keywords}>" />
+<meta name="description" content="<{$xoops_meta_description}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="XOOPS" />
+<title><{$xoops_sitename}> - <{$xoops_pagetitle}></title>
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_url}>/xoops.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_themecss}>" />
+<!-- RMV: added module header -->
+<{$xoops_module_header}>
+<script type="text/javascript">
+<!--
+<{$xoops_js}>
+//-->
+</script>
+</head>
+<body>
+
+<table cellspacing="0">
+<tr id="header">
+<td id="headerlogo"><a href="<{$xoops_url}>/"><img src="<{$xoops_imageurl}>logo.gif"></a></td>
+<td id="headert">
+<td id="headert">
+	<form action="<{$xoops_url}>/search.php" method="get">
+	<img src="<{$xoops_imageurl}>dot.gif" width=10 height=10><br>
+	<input type="text" name="query" size="20"/>
+	<input type="hidden" name="action" value="results" />
+	<input type="submit" name="searchSubmit" value="検索" /><img src="<{$xoops_imageurl}>dot.gif" width=10 height=10><br>
+	</form>
+</td>
+</tr>
+
+<tr>
+<td id="headerbar1"> XOOPS 2.0.5 NOW AVAILABLE</td>
+<td id="headerbar1">
+<img src="<{$xoops_imageurl}>icon1.gif"><a href="<{$xoops_url}>/modules/news/">NEWS</a>&nbsp;&nbsp;
+<img src="<{$xoops_imageurl}>icon1.gif"><a href="<{$xoops_url}>/modules/newbb/">FORUM</a>&nbsp;&nbsp;
+<img src="<{$xoops_imageurl}>icon1.gif"><a href="<{$xoops_url}>/modules/mydownloads/">DOWNLOAD</a>&nbsp;&nbsp;
+<img src="<{$xoops_imageurl}>icon1.gif"><a href="<{$xoops_url}>/modules/mylinks/">LINK</a>&nbsp;&nbsp;
+<td id="headerbar1">&nbsp;</td>
+</tr>
+
+<tr>
+<td id="headerbar2"><img src="<{$xoops_imageurl}>icon2.gif"><a href="<{$xoops_url}>/user.php">ACCOUNT</a></td>
+<td id="headerbar3"><img src="<{$xoops_imageurl}>icon2.gif"><a href="<{$xoops_url}>/viewpmsg.php">PRIVATE MESSAGE</a></td>
+<td id="headerbar4">&nbsp;</td>
+</tr>
+</table>
+
+<table cellspacing=0>
+<tr>
+<td id="leftcolumn">
+<!-- Start left blocks loop -->
+<{foreach item=block from=$xoops_lblocks}>
+<div class="blockTitle"><img src="<{$xoops_imageurl}>icon1.gif"> <{$block.title}></div>
+<div class="blockContent"><{$block.content}></div><br>
+<{/foreach}>
+<!-- End left blocks loop -->
+</td>
+
+<td id="centercolumn">
+<!-- Display center blocks if any -->
+<{if $xoops_showcblock == 1}>
+
+	<table cellspacing="0">
+	<tr>
+	<td id="centerCcolumn" colspan="2">
+	<!-- Start center-center blocks loop -->
+	<{foreach item=block from=$xoops_ccblocks}>
+	<div style="padding: 5px;">
+	<div class="blockTitle"><img src="<{$xoops_imageurl}>icon2.gif"> <{$block.title}></div>
+	<div class="blockContent"><{$block.content}></div>
+	</div>
+	<{/foreach}>
+	<!-- End center-center blocks loop -->
+    </td>
+    </tr>
+
+    <tr>
+    <td id="centerLcolumn">
+    <!-- Start center-left blocks loop -->
+    <{foreach item=block from=$xoops_clblocks}>
+	<div style="padding: 0px 0px 0px 8px;">
+	<div class="blockTitle"><img src="<{$xoops_imageurl}>icon2.gif"> <{$block.title}></div>
+	<div class="blockContent"><{$block.content}></div>
+	</div>
+	<{/foreach}>
+	<!-- End center-left blocks loop -->
+	</td>
+
+	<td id="centerRcolumn">
+    <!-- Start center-right blocks loop -->
+    <{foreach item=block from=$xoops_crblocks}>
+	<div style="padding: 0px 5px 0px 0px;">
+	<div class="blockTitle"><img src="<{$xoops_imageurl}>icon2.gif"> <{$block.title}></div>
+	<div class="blockContent"><{$block.content}></div>
+	</div>
+    <{/foreach}>
+    <!-- End center-right blocks loop -->
+    </td>
+    </tr>
+    </table>
+
+	<{/if}>
+	<!-- End display center blocks -->
+
+	<div id="content">
+	<{$xoops_contents}>
+	</div>
+
+</td>
+
+<{if $xoops_showrblock == 1}>
+
+<td id="rightcolumn">
+<!-- Start right blocks loop -->
+<{foreach item=block from=$xoops_rblocks}>
+<div class="blockTitle"><img src="<{$xoops_imageurl}>icon1.gif"> <{$block.title}></div>
+<div class="blockContent"><{$block.content}></div>
+<{/foreach}>
+<!-- End right blocks loop -->
+</td>
+
+<{/if}>
+
+</tr>
+</table>
+
+<!-- フッタ部分の定義 -->
+<table cellspacing="0">
+    <tr>
+    <td id="footerbar">
+	Powered by <a href="http://www.xoops.org/" target="_blank">Xoops2.05</a>　
+	Theme Design by <a href="http://www.oceannet.jp/" target="_blank">OCEAN-NET</a><br>
+	copyright (c) 2003 All rights reserved.<br><br>
+	</td>
+    </tr>
+</table>
+<!-- フッタ部分終わり -->
+
+</body>
+</html>
